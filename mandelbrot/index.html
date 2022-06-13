@@ -12,13 +12,21 @@
 		</style>
 	</head>
 	<body>
-		<canvas id="canvas" width="500" height="500"></canvas>
+		<canvas id="mandelbrot" width="400" height="400"></canvas>
 		<button id="zoomin">Zoom in</button>
 		<button id="zoomout">Zoom out</button>
+		<canvas id="julia" width="400" height="400"></canvas>
+		<button id="zoominjulia">Zoom in</button>
+		<button id="zoomoutjulia">Zoom out</button>
 		<br />
 		<label for="canvas" id="coord"></label>
 		<br />
 		<label for="canvas" id="center"></label>
+		<br />
+		<input type="checkbox" name="juliaprompt" id="juliacb" /> Visualize Julia
+		Set <br />
+		<input type="checkbox" name="recenter" id="mandelrecenter" checked="true" />
+		Recenter
 		<script src="mandelbrot.js"></script>
 	</body>
 </html>
