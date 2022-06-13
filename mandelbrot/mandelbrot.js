@@ -4,14 +4,17 @@ const coord = document.getElementById("coord");
 const center = document.getElementById("center");
 const zoomin = document.getElementById("zoomin");
 const zoomout = document.getElementById("zoomout");
-var x_scale = 2.5;
-var y_scale = 2.5;
+var x_scale = 0.0043;
+var y_scale = 0.0043;
+// var x_scale = 2.5;
+// var y_scale = 2.5;
 // Misiurewicz points
 var x_center = -0.77568377;
 var y_center = 0.13646737;
+//0.7853981633974483,0.14
 // var x_center = 0;
 // var y_center = 0;
-var iterations = 50;
+var iterations = 1000;
 colorset = [
 	"rgb(254, 0, 0)",
 	"rgb(255, 121, 1)",
