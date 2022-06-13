@@ -6,17 +6,20 @@ const zoomin = document.getElementById("zoomin");
 const zoomout = document.getElementById("zoomout");
 var x_scale = 2.5;
 var y_scale = 2.5;
+// Misiurewicz points
 var x_center = -0.77568377;
 var y_center = 0.13646737;
 // var x_center = 0;
 // var y_center = 0;
-var iterations = 100;
+var iterations = 50;
 colorset = [
-	"rgb(0,7,100)",
-	"rgb(32,107,203)",
-	"rgb(237,255,255)",
-	"rgb(255,170,0)",
-	"rgb(0,2,0)",
+	"rgb(254, 0, 0)",
+	"rgb(255, 121, 1)",
+	"rgb(255, 255, 11)",
+	"rgb(34, 219, 19)",
+	"rgb(36, 48, 255)",
+	"rgb(102, 0, 146)",
+	"rgb(200, 0, 249)",
 ];
 plotMandelbrot();
 canvas.addEventListener(
@@ -48,10 +51,6 @@ canvas.addEventListener("click", (e) => {
 		", " +
 		Math.round(y_center * 100) / 100;
 	center.innerHTML = str;
-	// x_lrange = x_lrange / 1.5;
-	// x_rrange = x_rrange / 1.5;
-	// y_trange = y_trange / 1.5;
-	// y_brange = y_brange / 1.5;
 	plotMandelbrot();
 });
 
@@ -96,7 +95,7 @@ function plotPoints(x, y) {
 			// var cidx = Math.floor(
 			// 	(Math.sqrt(iters + 10 - smooth) * 256) % colorset.length
 			// );
-			// const col = colorset[cidx];
+			// const col = colorset[iters % colorset.length];
 			const val = map(iters, 0, iterations, 0, 255);
 			const col = "rgb(" + val + "," + val + "," + val + ")";
 			ctx.fillStyle = col;
@@ -106,6 +105,7 @@ function plotPoints(x, y) {
 		iters++;
 	}
 	ctx.fillStyle = "white";
+	// ctx.fillStyle = "black";
 	draw(x, y);
 }
 
