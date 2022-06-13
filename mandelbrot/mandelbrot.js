@@ -11,14 +11,14 @@ const zoomoutjulia = document.getElementById("zoomoutjulia");
 const juliacheck = document.getElementById("juliacb");
 const recenter = document.getElementById("mandelrecenter");
 // Misiurewicz points
-// var x_center = -0.77568377;
-// var y_center = 0.13646737;
-// var x_scale = 0.0043;
-// var y_scale = 0.0043;
-var x_scale = 2.5;
-var y_scale = 2.5;
-var x_center = 0;
-var y_center = 0;
+var x_center = -0.77568377;
+var y_center = 0.13646737;
+var x_scale = 0.043;
+var y_scale = 0.043;
+// var x_scale = 2.5;
+// var y_scale = 2.5;
+// var x_center = 0;
+// var y_center = 0;
 
 var x_scale_julia = 2.5;
 var y_scale_julia = 2.5;
