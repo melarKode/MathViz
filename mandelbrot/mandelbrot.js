@@ -10,15 +10,16 @@ const zoominjulia = document.getElementById("zoominjulia");
 const zoomoutjulia = document.getElementById("zoomoutjulia");
 const juliacheck = document.getElementById("juliacb");
 const recenter = document.getElementById("mandelrecenter");
+const juliapreview = document.getElementById("juliart");
 // Misiurewicz points
-var x_center = -0.77568377;
-var y_center = 0.13646737;
-var x_scale = 0.043;
-var y_scale = 0.043;
-// var x_scale = 2.5;
-// var y_scale = 2.5;
-// var x_center = 0;
-// var y_center = 0;
+// var x_center = -0.77568377;
+// var y_center = 0.13646737;
+// var x_scale = 0.043;
+// var y_scale = 0.043;
+var x_scale = 2.5;
+var y_scale = 2.5;
+var x_center = 0;
+var y_center = 0;
 
 var x_scale_julia = 2.5;
 var y_scale_julia = 2.5;
@@ -26,7 +27,7 @@ var x_center_julia = 0;
 var y_center_julia = 0;
 
 var iterations = 1000;
-var iterations_julia = 1000;
+var iterations_julia = 50;
 var cr_init = 0.08;
 var ci_init = -0.26;
 colorset = [
@@ -62,6 +63,12 @@ canvas.addEventListener(
 			"Y : " +
 			Math.round(scaled_y * 100) / 100;
 		coord.innerHTML = str;
+		//testing smoothness
+		if (juliapreview.checked) {
+			cr_init = scaled_x;
+			ci_init = scaled_y;
+			plotJulia();
+		}
 	},
 	0
 );
@@ -152,14 +159,14 @@ function plotJuliaPoints(x, y, cr_init, ci_init) {
 		zi = _zi;
 		var dis = Math.sqrt(zr * zr + zi * zi);
 		if (dis >= 2) {
-			const col = "white";
+			const col = colorset[iters % colorset.length];
 			ctx2.fillStyle = col;
 			drawJulia(x, y);
 			return;
 		}
 		iters++;
 	}
-	ctx2.fillStyle = "black";
+	ctx2.fillStyle = "white";
 	drawJulia(x, y);
 }
 
