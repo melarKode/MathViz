@@ -109,6 +109,7 @@ function draw() {
 		}
 	}
 }
+
 function mousePressed() {
 	for (let i = 0; i < points.length; i++) {
 		points[i].pressed();
